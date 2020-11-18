@@ -1,0 +1,65 @@
+<div class="container-login">
+    <div class="row m-0">
+        <div class="col">
+            <h1 class="title">TareasApp</h1>
+        </div>
+    </div>
+    <div class="row justify-content-center m-0">
+        <div class="col-sm-8 col-md-6 col-lg-5 col-xl-3 mt-5 login animate__animated animate__fadeInLeftBig">
+            <h3>Iniciar sesión</h3>
+            <form (ngSubmit)="login( f )" #f="ngForm">
+                <div class="form-group mt-5">
+                    <div class="form-group">
+                        <input type="text" 
+                               class              = "form-control" 
+                               name               = "email" 
+                               [class.is-invalid] = "f.submitted && email.invalid" 
+                               [(ngModel)]        = "user.email" 
+                               placeholder        = "Correo electrónico" 
+                               #email             = "ngModel"
+                               required 
+                               email>
+
+                        <small *ngIf="f.submitted && email.invalid" 
+                               class="text-warning font-weight-bold">
+                               Correo no válido
+                        </small>
+                    </div>
+                    <div class="form-group">
+                        <input type               = "password" 
+                               class              = "form-control"
+                               name               = "password" 
+                               [class.is-invalid] = "f.submitted && email.invalid" 
+                               [(ngModel)]        = "user.password"                                
+                               placeholder        = "Contraseña" 
+                               #password          = "ngModel"
+                               minlength          = "6"
+                               required>
+                    
+                        <small *ngIf="f.submitted && password.invalid" 
+                               class="text-warning font-weight-bold">
+                               La contraseña debe tener como mínimo seis caracteres
+                        </small>
+                    
+                    </div>
+                    <div class="form-group form-check">
+                        <input type        = "checkbox" 
+                               class       = "form-check-input"
+                               name        = remember-me
+                               [(ngModel)] = rememberMe>
+
+                        <label class="form-check-label">
+                            Recordar mi usuario
+                        </label>
+
+                    </div>
+
+                    <p>
+                        ¿No tienes cuenta? &nbsp; <a routerLink="/registration">Crear cuenta</a>
+                    </p>
+                    <button class="btn btn-block btn-primary mt-5"><b>Iniciar sesión</b></button>
+                </div>
+            </form>            
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+.container-login {
+    background-image: url('/assets/img/bg-login.jpg');
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;    
+}
+
+.login {
+    border-radius: 5px;    
+    padding: 70px 50px 70px 50px;
+    background-color: rgba(0, 0, 0, .7);
+    color: white;
+}
+
+.title {
+    padding: 10px 0 0 50px;
+    font-style: italic;
+    color: white;
+}
